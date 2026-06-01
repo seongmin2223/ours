@@ -1,3 +1,4 @@
+#file: noinspection YAMLSchemaValidation
 spring:
   application:
     name: ours
@@ -40,3 +41,8 @@ spring:
 app:
   community:
     restrict-gender: false
+
+jwt:
+  secret: c3ByaW5nLWJvb3Qtc2VjdXJpdHktand0LXNlY3JldC1rZXktZm9yLW91cnMtY29tbXVuaXR5LXByb2plY3Q=
+  access-token-expiration: 3600000
+  refresh-token-expiration: 604800000

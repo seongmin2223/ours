@@ -21,6 +21,9 @@ public class User {
     @Column(nullable = false, unique = true)
     private String email;
 
+    @Column(nullable = false)
+    private String nickname; // 닉네임 필드 추가
+
     @Enumerated(EnumType.STRING)
     @Column(nullable = true)
     private Gender gender;
@@ -34,8 +37,9 @@ public class User {
     private LocalDateTime createdAt;
 
     @Builder
-    public User(String email, Gender gender, String role, String provider, String providerId) {
+    public User(String email, String nickname, Gender gender, String role, String provider, String providerId) {
         this.email = email;
+        this.nickname = nickname;
         this.gender = gender;
         this.role = role;
         this.provider = provider;

@@ -35,14 +35,11 @@ public class MockPostController {
     }
 
     @GetMapping("users/{userId}")
-    public ResponseEntity<List<Post>> getPostsByUser(@PathVariable Long userId) {
+    public ResponseEntity<List<Post>> getPostsByUser(@PathVariable Integer userId) {
         User user = userRepository.findById(userId)
                 .orElseThrow(() -> new IllegalArgumentException("존재하지 않는 유저입니다. ID: " + userId));
 
         List<Post> posts = postRepository.findByUser(user);
         return ResponseEntity.ok(posts);
     }
-
-
-
 }
